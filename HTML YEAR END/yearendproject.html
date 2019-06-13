@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+	body {
+		background-image: linear-gradient(#0066ff, #00ffcc); 
+		text-align: center;
+	}
+	.title {
+		font-size: 200px;
+	}
+	.startGame {
+		background: url(rainbow.jpg) no-repeat;
+		width: 590px;
+		height: 332px;
+		border: 3px solid blue;
+		color: white;
+		font-size: 100px;
+	}
+
+
+  </style>
+</head>
+<body>
+
+<span class="title">Shadow of Guo</span>
+<br>
+<br>
+<br>
+<div>
+Please Enter Your Name:<input id="charName" value="John Doe">
+</div>
+
+
+<button id="startGame" class="startGame">Enter Your Doom</button>
+
+
+
+</body>
+<script>
+function GameStart() {
+var charName = document.getElementById("charName").value;
+localStorage.setItem("Player Name",charName);
+location.replace("file:///H:/Profile/Desktop/HTML%20YEAR%20END/yearendproject2.html");
+
+
+}
+
+
+
+document.getElementById("startGame").addEventListener("click",GameStart);
+</script>

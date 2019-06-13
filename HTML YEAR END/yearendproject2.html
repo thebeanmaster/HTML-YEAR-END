@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+.chat {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	height: 10%;
+	background-color: black;
+	color: white;
+	font-size: 24px;
+}
+img {
+	background-size: cover;
+	position: absolute;
+	top: 250;
+	display: block;
+	left: 390;
+}
+body {
+  background-image: url("backy5.png");
+}
+  </style>
+</head>
+<body>
+<img src="blueguy2.png" id="blueguy">
+
+
+
+
+
+
+<div class="chat" id="dialogue">
+Who the heck are you and what are you doing in my FOREST!?!?!?
+</div>
+</body>
+<script>
+name = localStorage.getItem("Player Name");
+setTimeout(chat2, 4000)
+setTimeout(chat3, 8000)
+setTimeout(chat4, 12000)
+setTimeout(chat5, 16000)
+setTimeout(chat6, 20000)
+setTimeout(chat7, 24000)
+
+
+function chat2() {
+document.getElementById("dialogue").innerHTML = "W-what? You're the LEGENDARY " + name + " I've been hearing of????";
+document.getElementById("blueguy").src = "blueguy3.png";
+}
+
+function chat3() {
+document.getElementById("dialogue").innerHTML = "Allow me to introduce myself, I'm Quagmire";
+document.getElementById("blueguy").src = "blueguy4.png";
+}
+
+function chat4() {
+document.getElementById("dialogue").innerHTML = "You shouldn't be here, its very dangerous even for someone as awesome as you! But, since you're here, could you help me with a problem?";
+document.getElementById("blueguy").src = "blueguy1.png";
+}
+
+function chat5() {
+document.getElementById("dialogue").innerHTML = "Some hooligans have taken my house, I need you to help me get rid of them, if you know what I mean.";
+document.getElementById("blueguy").src = "blueguy4.png";
+}
+
+function chat6() {
+document.getElementById("dialogue").innerHTML = "LETS GOOO!!!!!";
+document.getElementById("blueguy").src = "blueguy2.png";
+}
+
+function chat7() {
+location.replace("file:///H:/Profile/Desktop/HTML%20YEAR%20END/yearendproject3.html");
+}
+
+
+
+</script>

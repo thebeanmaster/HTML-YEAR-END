@@ -1,0 +1,677 @@
+<html>
+<head>
+<style>
+.oof {
+    position: fixed;
+    bottom: 600;
+	right: 920;
+	height: 10%;
+	background-color: white;
+	color: black;
+	font-size: 24px;
+}
+.chat {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	height: 10%;
+	background-color: black;
+	color: white;
+	font-size: 24px;
+}
+.fight1 {
+    position: fixed;
+    bottom: 90;
+    width: 50%;
+	height: 10%;
+	background-color: #F0684A;
+	color: white;
+	font-size: 24px;
+}
+.fight2 {
+    position: fixed;
+	right: 0;
+    bottom: 90;
+    width: 50%;
+	height: 10%;
+	background-color: #FAA43C;
+	color: white;
+	font-size: 24px;
+}
+img {
+	background-size: cover;
+	position: absolute;
+	top: 75;
+	display: block;
+	left: 300;
+	width: 50%;
+}
+.enHpFro {
+    position: fixed;
+    top: 0;
+	width: 100%;
+	height: 5%;
+	background-color: #B8290A;
+	color: #B8290A;
+	font-size: 24px;
+}
+.enHpBa {
+    position: fixed;
+    top: 0;
+	width: 100%;
+	height: 5%;
+	background-color: black;
+	color: black;
+	font-size: 24px;
+}
+.charHpFro {
+    position: fixed;
+    bottom: 180;
+	width: 100%;
+	height: 5%;
+	background-color: lime;
+	color: lime;
+	font-size: 24px;
+}
+.charHpBa {
+    position: fixed;
+    bottom: 180;
+	width: 100%;
+	height: 5%;
+	background-color: #DCD9D8;
+	color: #DCD9D8;
+	font-size: 24px;
+}
+.charHpOv {
+    position: fixed;
+    bottom: 180;
+	width: 0%;
+	height: 5%;
+	background-color: #50FACF;
+	color: #50FACF;
+	font-size: 24px;
+}
+</style>
+</head>
+<body>
+<div class="enHpBa">
+
+</div>
+<div class="enHpFro" id="frontHP">
+
+</div>
+
+<div class="oof" id="oof">
+
+</div>
+
+<img src="tinyjimbo.png">
+<div class="charHPBa">
+</div>
+<div class="charHpFro" id="CFrontHP">
+</div>
+<div class="charHpOv" id="COver">
+</div>
+<button class="fight1" id="attack">
+Attack
+</button>
+<button class="fight2" id="heal" onClick="this.disabled = true">
+Heal
+</button>
+<div class="chat" id="chat">
+Ah! I see you've found my friend Tiny Jimbo! We're not actually friends, I hate that guy.
+</div>
+</body>
+<script>
+weapon = localStorage.getItem("Weapon");
+var charHP;
+var enemyHP;
+var damage;
+
+charHP = 500;
+enemyHP = 1000;
+
+switch (weapon) {
+	case "hotdog" :{
+	damage = 100;
+	} break;
+	case "sword" :{
+	damage = 10;
+	} break;
+	case "gun" :{
+	damage = 50;
+	} break;
+}
+
+function Attack() {
+enemyHP = enemyHP - damage;
+charHP = charHP - 50;
+document.getElementById("heal").disabled = false;
+switch (enemyHP) {
+	case 1000 :{
+		 document.getElementById("frontHP").style.width = "100%";
+	} break;
+	case 990 :{
+		document.getElementById("frontHP").style.width = "99%";
+	} break;
+	case 980 :{
+		document.getElementById("frontHP").style.width = "98%";
+	} break;
+	case 970 :{
+		document.getElementById("frontHP").style.width = "97%";
+	} break;
+	case 960 :{
+		document.getElementById("frontHP").style.width = "96%";
+	} break;
+	case 950 :{
+		document.getElementById("frontHP").style.width = "95%";
+	} break;
+	case 940 :{
+		document.getElementById("frontHP").style.width = "94%";
+	} break;
+	case 930 :{
+		document.getElementById("frontHP").style.width = "93%";
+	} break;
+	case 920 :{
+		document.getElementById("frontHP").style.width = "92%";
+	} break;
+	case 910 :{
+		document.getElementById("frontHP").style.width = "91%";
+	} break;
+	case 900 :{
+		document.getElementById("frontHP").style.width = "90%";
+	} break;
+	case 890 :{
+		document.getElementById("frontHP").style.width = "89%";
+	} break;
+	case 880 :{
+		document.getElementById("frontHP").style.width = "88%";
+	} break;
+	case 870 :{
+		document.getElementById("frontHP").style.width = "87%";
+	} break;
+	case 860 :{
+		document.getElementById("frontHP").style.width = "86%";
+	} break;
+	case 850 :{
+		document.getElementById("frontHP").style.width = "85%";
+	} break;
+	case 840 :{
+		document.getElementById("frontHP").style.width = "84%";
+	} break;
+	case 830 :{
+		document.getElementById("frontHP").style.width = "83%";
+	} break;
+	case 820 :{
+		document.getElementById("frontHP").style.width = "82%";
+	} break;
+	case 810 :{
+		document.getElementById("frontHP").style.width = "81%";
+	} break;
+	case 800 :{
+		document.getElementById("frontHP").style.width = "80%";
+	} break;
+	case 790 :{
+		document.getElementById("frontHP").style.width = "79%";
+	} break;
+	case 780 :{
+		document.getElementById("frontHP").style.width = "78%";
+	} break;
+	case 770 :{
+		document.getElementById("frontHP").style.width = "77%";
+	} break;
+	case 760 :{
+		document.getElementById("frontHP").style.width = "76%";
+	} break;
+	case 750 :{
+		document.getElementById("frontHP").style.width = "75%";
+	} break;
+	case 740 :{
+		document.getElementById("frontHP").style.width = "74%";
+	} break;
+	case 730 :{
+		document.getElementById("frontHP").style.width = "73%";
+	} break;
+	case 720 :{
+		document.getElementById("frontHP").style.width = "72%";
+	} break;
+	case 710 :{
+		document.getElementById("frontHP").style.width = "71%";
+	} break;
+	case 700 :{
+		document.getElementById("frontHP").style.width = "70%";
+	} break;
+	case 690 :{
+		document.getElementById("frontHP").style.width = "69%";
+	} break;
+	case 680 :{
+		document.getElementById("frontHP").style.width = "68%";
+	} break;
+	case 670 :{
+		document.getElementById("frontHP").style.width = "67%";
+	} break;
+	case 660 :{
+		document.getElementById("frontHP").style.width = "66%";
+	} break;
+	case 650 :{
+		document.getElementById("frontHP").style.width = "65%";
+	} break;
+	case 640 :{
+		document.getElementById("frontHP").style.width = "64%";
+	} break;
+	case 630 :{
+		document.getElementById("frontHP").style.width = "63%";
+	} break;
+	case 620 :{
+		document.getElementById("frontHP").style.width = "62%";
+	} break;
+	case 610 :{
+		document.getElementById("frontHP").style.width = "61%";
+	} break;
+	case 600 :{
+		document.getElementById("frontHP").style.width = "60%";
+	} break;
+	case 590 :{
+		document.getElementById("frontHP").style.width = "59%";
+	} break;
+	case 580 :{
+		document.getElementById("frontHP").style.width = "58%";
+	} break;
+	case 570 :{
+		document.getElementById("frontHP").style.width = "57%";
+	} break;
+	case 560 :{
+		document.getElementById("frontHP").style.width = "56%";
+	} break;
+	case 550 :{
+		document.getElementById("frontHP").style.width = "55%";
+	} break;
+	case 540 :{
+		document.getElementById("frontHP").style.width = "54%";
+	} break;
+	case 530 :{
+		document.getElementById("frontHP").style.width = "53%";
+	} break;
+	case 520 :{
+		document.getElementById("frontHP").style.width = "52%";
+	} break;
+	case 510 :{
+		document.getElementById("frontHP").style.width = "51%";
+	} break;
+	case 500 :{
+		document.getElementById("frontHP").style.width = "50%";
+	} break;
+	case 490 :{
+		document.getElementById("frontHP").style.width = "49%";
+	} break;
+	case 480 :{
+		document.getElementById("frontHP").style.width = "48%";
+	} break;
+	case 470 :{
+		document.getElementById("frontHP").style.width = "47%";
+	} break;
+	case 460 :{
+		document.getElementById("frontHP").style.width = "46%";
+	} break;
+	case 450 :{
+		document.getElementById("frontHP").style.width = "45%";
+	} break;
+	case 440 :{
+		document.getElementById("frontHP").style.width = "44%";
+	} break;
+	case 430 :{
+		document.getElementById("frontHP").style.width = "43%";
+	} break;
+	case 420 :{
+		document.getElementById("frontHP").style.width = "42%";
+	} break;
+	case 410 :{
+		document.getElementById("frontHP").style.width = "41%";
+	} break;
+	case 400 :{
+		document.getElementById("frontHP").style.width = "40%";
+	} break;
+	case 390 :{
+		document.getElementById("frontHP").style.width = "39%";
+	} break;
+	case 380 :{
+		document.getElementById("frontHP").style.width = "38%";
+	} break;
+	case 370 :{
+		document.getElementById("frontHP").style.width = "37%";
+	} break;
+	case 360 :{
+		document.getElementById("frontHP").style.width = "36%";
+	} break;
+	case 350 :{
+		document.getElementById("frontHP").style.width = "35%";
+	} break;
+	case 340 :{
+		document.getElementById("frontHP").style.width = "34%";
+	} break;
+	case 330 :{
+		document.getElementById("frontHP").style.width = "33%";
+	} break;
+	case 320 :{
+		document.getElementById("frontHP").style.width = "32%";
+	} break;
+	case 310 :{
+		document.getElementById("frontHP").style.width = "31%";
+	} break;
+	case 300 :{
+		document.getElementById("frontHP").style.width = "30%";
+	} break;
+	case 290 :{
+		document.getElementById("frontHP").style.width = "29%";
+	} break;
+	case 280 :{
+		document.getElementById("frontHP").style.width = "28%";
+	} break;
+	case 270 :{
+		document.getElementById("frontHP").style.width = "27%";
+	} break;
+	case 260 :{
+		document.getElementById("frontHP").style.width = "26%";
+	} break;
+	case 250 :{
+		document.getElementById("frontHP").style.width = "25%";
+	} break;
+	case 240 :{
+		document.getElementById("frontHP").style.width = "24%";
+	} break;
+	case 230 :{
+		document.getElementById("frontHP").style.width = "23%";
+	} break;
+	case 220 :{
+		document.getElementById("frontHP").style.width = "22%";
+	} break;
+	case 210 :{
+		document.getElementById("frontHP").style.width = "21%";
+	} break;
+	case 200 :{
+		document.getElementById("frontHP").style.width = "20%";
+	} break;
+	case 190 :{
+		document.getElementById("frontHP").style.width = "19%";
+	} break;
+	case 180 :{
+		document.getElementById("frontHP").style.width = "18%";
+	} break;
+	case 170 :{
+		document.getElementById("frontHP").style.width = "17%";
+	} break;
+	case 160 :{
+		document.getElementById("frontHP").style.width = "16%";
+	} break;
+	case 150 :{
+		document.getElementById("frontHP").style.width = "15%";
+	} break;
+	case 140 :{
+		document.getElementById("frontHP").style.width = "14%";
+	} break;
+	case 130 :{
+		document.getElementById("frontHP").style.width = "13%";
+	} break;
+	case 120 :{
+		document.getElementById("frontHP").style.width = "12%";
+	} break;
+	case 110 :{
+		document.getElementById("frontHP").style.width = "11%";
+	} break;
+	case 100 :{
+		document.getElementById("frontHP").style.width = "10%";
+	} break;
+	case 90 :{
+		document.getElementById("frontHP").style.width = "9%";
+	} break;
+	case 80 :{
+		document.getElementById("frontHP").style.width = "8%";
+	} break;
+	case 70 :{
+		document.getElementById("frontHP").style.width = "7%";
+	} break;
+	case 60 :{
+		document.getElementById("frontHP").style.width = "6%";
+	} break;
+	case 50 :{
+		document.getElementById("frontHP").style.width = "5%";
+	} break;
+	case 40 :{
+		document.getElementById("frontHP").style.width = "4%";
+	} break;
+	case 30 :{
+		document.getElementById("frontHP").style.width = "3%";
+	} break;
+	case 20 :{
+		document.getElementById("frontHP").style.width = "2%";
+	} break;
+	case 10 :{
+		document.getElementById("frontHP").style.width = "1%";
+	} break;
+	case 0 :{
+		document.getElementById("frontHP").style.width = "0%";
+		doWin();
+		document.getElementById("attack").disabled = 'true';
+		document.getElementById("heal").disabled = 'true';
+	} break;
+}
+
+switch (charHP) {
+	case 1100 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "100%";
+	} break;
+	case 1050 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "92%";
+	} break;
+	case 1000 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "83%";
+	} break;
+	case 950 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "75%";
+	} break;
+	case 900 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "66%";
+	} break;
+	case 850 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "58%";
+	} break;
+	case 800 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "50%";
+	} break;
+	case 750 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "42%";
+	} break;
+	case 700 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "33%";
+	} break;
+	case 650 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "25%";
+	} break;
+	case 600 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "17%";
+	} break;
+	case 550 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "8%";
+	} break;
+	case 500 :{
+		 document.getElementById("CFrontHP").style.width = "100%";
+		 document.getElementById("COver").style.width = "0%";
+	} break;
+	case 450 :{
+		 document.getElementById("CFrontHP").style.width = "90%";
+	} break;
+	case 400 :{
+		 document.getElementById("CFrontHP").style.width = "80%";
+	} break;
+	case 350 :{
+		 document.getElementById("CFrontHP").style.width = "70%";
+	} break;
+	case 300 :{
+		 document.getElementById("CFrontHP").style.width = "60%";
+	} break;
+	case 250 :{
+		 document.getElementById("CFrontHP").style.width = "50%";
+	} break;
+	case 200 :{
+		 document.getElementById("CFrontHP").style.width = "40%";
+	} break;
+	case 150 :{
+		 document.getElementById("CFrontHP").style.width = "30%";
+	} break;
+	case 100 :{
+		 document.getElementById("CFrontHP").style.width = "20%";
+	} break;
+	case 50 :{
+		 document.getElementById("CFrontHP").style.width = "10%";
+	} break;
+	case 0 :{
+		 document.getElementById("CFrontHP").style.width = "0%";
+		 doLose();
+		 document.getElementById("attack").disabled = 'true';
+		 document.getElementById("heal").disabled = 'true';
+	} break;
+}	
+
+console.log(enemyHP);
+console.log(charHP);
+}
+
+function Heal() {
+charHP = charHP + 100
+document.getElementById("heal").disabled = true;
+switch (charHP) {
+	case 1100 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "100%";
+	} break;
+	case 1050 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "92%";
+	} break;
+	case 1000 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "83%";
+	} break;
+	case 950 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "75%";
+	} break;
+	case 900 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "66%";
+	} break;
+	case 850 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "58%";
+	} break;
+	case 800 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "50%";
+	} break;
+	case 750 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "42%";
+	} break;
+	case 700 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "33%";
+	} break;
+	case 650 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "25%";
+	} break;
+	case 600 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "17%";
+	} break;
+	case 550 :{
+		document.getElementById("CFrontHP").style.width = "100%";
+		document.getElementById("COver").style.width = "8%";
+	} break;
+	case 500 :{
+		 document.getElementById("CFrontHP").style.width = "100%";
+		 document.getElementById("COver").style.width = "0%";
+	} break;
+	case 450 :{
+		 document.getElementById("CFrontHP").style.width = "90%";
+	} break;
+	case 400 :{
+		 document.getElementById("CFrontHP").style.width = "80%";
+	} break;
+	case 350 :{
+		 document.getElementById("CFrontHP").style.width = "70%";
+	} break;
+	case 300 :{
+		 document.getElementById("CFrontHP").style.width = "60%";
+	} break;
+	case 250 :{
+		 document.getElementById("CFrontHP").style.width = "50%";
+	} break;
+	case 200 :{
+		 document.getElementById("CFrontHP").style.width = "40%";
+	} break;
+	case 150 :{
+		 document.getElementById("CFrontHP").style.width = "30%";
+	} break;
+	case 100 :{
+		 document.getElementById("CFrontHP").style.width = "20%";
+	} break;
+	case 50 :{
+		 document.getElementById("CFrontHP").style.width = "10%";
+	} break;
+	case 0 :{
+		 document.getElementById("CFrontHP").style.width = "0%";
+		 doLose();
+		 document.getElementById("attack").disabled = 'true';
+		 document.getElementById("heal").disabled = 'true';
+	} break;
+}	
+
+
+
+console.log(charHP);
+}
+
+function doWin() {
+document.getElementById("chat").innerHTML = "Lmao did u actually just kill that noob?";
+document.getElementById("oof").innerHTML = "OOF";
+setTimeout(next, 3000)
+}
+
+function doLose() {
+document.getElementById("chat").innerHTML = "Dang son you just got rekt";
+document.getElementById("oof").innerHTML = "ur actually a loser, try again later nerd";
+setTimeout(back, 3000)
+}
+
+function back() {
+location.reload();
+}
+
+function next() { 
+document.getElementById("oof").innerHTML = "I litroly con't believe you've done this, ye best be prepared to answer to me master!";
+setTimeout(boss, 4500)
+}
+
+function boss() {
+location.replace("file:///H:/Profile/Desktop/HTML%20YEAR%20END/yearendproject5.html");
+}
+
+document.getElementById("attack").addEventListener("click",Attack);
+document.getElementById("heal").addEventListener("click",Heal);
+console.log(weapon);
+
+
+</script>

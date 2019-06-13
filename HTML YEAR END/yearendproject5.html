@@ -1,0 +1,368 @@
+<html>
+<head>
+<style>
+.chat {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	height: 10%;
+	background-color: black;
+	color: #c61d1d;
+	font-size: 24px;
+}
+img.boss {
+	background-size: cover;
+	position: absolute;
+	top: 100;
+	display: block;
+	left: 300;
+	width: 50%;
+}
+.fight1 {
+    position: fixed;
+    bottom: 90;
+    width: 50%;
+	height: 10%;
+	background-color: #F0684A;
+	color: white;
+	font-size: 24px;
+}
+.fight2 {
+    position: fixed;
+	right: 0;
+    bottom: 90;
+    width: 50%;
+	height: 10%;
+	background-color: #c61d1d;
+	color: white;
+	font-size: 24px;
+}
+.enHpFro {
+    position: fixed;
+    top: 0;
+	width: 100%;
+	height: 5%;
+	background-color: #B8290A;
+	color: #B8290A;
+	font-size: 24px;
+}
+.enHpBa {
+    position: fixed;
+    top: 0;
+	width: 100%;
+	height: 5%;
+	background-color: black;
+	color: black;
+	font-size: 24px;
+}
+.enHpOv {
+    position: fixed;
+    top: 0;
+	width: 0%;
+	height: 5%;
+	background-color: #50FACF;
+	color: #50FACF;
+	font-size: 24px;
+}
+.charHpFro {
+    position: fixed;
+    bottom: 180;
+	width: 100%;
+	height: 5%;
+	background-color: lime;
+	color: lime;
+	font-size: 24px;
+}
+.charHpBa {
+    position: fixed;
+    bottom: 180;
+	width: 100%;
+	height: 5%;
+	background-color: #DCD9D8;
+	color: #DCD9D8;
+	font-size: 24px;
+}
+
+</style>
+</head>
+<body>
+<img src="hell.jpg" width="100%" height="97%">
+
+<div class="enHpBa">
+
+</div>
+<div class="enHpFro" id="frontHP">
+
+</div>
+<div class="enHPOv" id="over">
+
+</div>
+
+
+
+
+
+<img class="boss" id="boss" src="villager.png">
+
+<button class="fight1" id="attack">
+Attack
+</button>
+<button class="fight2" id="die">
+DIE??!?!!?!
+</button>
+
+
+
+<div class="chat" id="chat">
+teehee
+</div>
+
+
+
+
+
+
+
+</body>
+<script>
+name = localStorage.getItem("Player Name");
+weapon = localStorage.getItem("Weapon");
+var charHP;
+var bossHP;
+var damage;
+var megaHP;
+var time;
+var time2;
+
+
+bossHP = 2400;
+megaHP = -1;
+
+switch (weapon) {
+	case "hotdog" :{
+	damage = 600;
+	} break;
+	case "sword" :{
+	damage = 100;
+	} break;
+	case "gun" :{
+	damage = 200;
+	} break;
+}
+
+
+document.getElementById("chat").innerHTML = "Oh, hello " + name + ". I don't think Quagmire will be able to help you right now. Or ever! Hehehehehehehehehehehehehehehehehehehehehehehehe";
+
+function Attack() {
+bossHP = bossHP - damage;
+megaHP = megaHP - damage;
+switch (bossHP) {
+	case 2400 :{
+		 document.getElementById("frontHP").style.width = "100%";
+	} break;
+	case 2300 :{
+		 document.getElementById("frontHP").style.width = "96%";
+	} break;
+	case 2200 :{
+		 document.getElementById("frontHP").style.width = "92%";
+	} break;
+	case 2100 :{
+		 document.getElementById("frontHP").style.width = "88%";
+	} break;
+	case 2000 :{
+		 document.getElementById("frontHP").style.width = "83%";
+	} break;
+	case 1900 :{
+		 document.getElementById("frontHP").style.width = "79%";
+	} break;
+	case 1800 :{
+		 document.getElementById("frontHP").style.width = "75%";
+	} break;
+	case 1700 :{
+		 document.getElementById("frontHP").style.width = "71%";
+	} break;
+	case 1600 :{
+		 document.getElementById("frontHP").style.width = "67%";
+	} break;
+	case 1500 :{
+		 document.getElementById("frontHP").style.width = "63%";
+	} break;
+	case 1400 :{
+		 document.getElementById("frontHP").style.width = "58%";
+	} break;
+	case 1300 :{
+		 document.getElementById("frontHP").style.width = "54%";
+	} break;
+	case 1200 :{
+		 document.getElementById("frontHP").style.width = "50%";
+	} break;
+	case 1100 :{
+		 document.getElementById("frontHP").style.width = "46%";
+	} break;
+	case 1000 :{
+		 document.getElementById("frontHP").style.width = "42%";
+	} break;
+	case 900 :{
+		 document.getElementById("frontHP").style.width = "36%";
+	} break;
+	case 800 :{
+		 document.getElementById("frontHP").style.width = "33%";
+	} break;
+	case 700 :{
+		 document.getElementById("frontHP").style.width = "29%";
+	} break;
+	case 600 :{
+		 document.getElementById("frontHP").style.width = "25%";
+	} break;
+	case 500 :{
+		 document.getElementById("frontHP").style.width = "21%";
+	} break;
+	case 400 :{
+		 document.getElementById("frontHP").style.width = "17%";
+	} break;
+	case 300 :{
+		 document.getElementById("frontHP").style.width = "13%";
+	} break;
+	case 200 :{
+		 document.getElementById("frontHP").style.width = "9%";
+	} break;
+	case 100 :{
+		 document.getElementById("frontHP").style.width = "4%";
+	} break;
+	case 000 :{
+		 document.getElementById("frontHP").style.width = "0%";
+		 megaHP = 3000;
+		 document.getElementById("chat").innerHTML = "Oh, you thought I could be defeated by YOU?? Ha! In 10 seconds I will unleash a devastating attack that will kill you and the universe! HAHAHAHAHA";
+		 document.getElementById("boss").src = "homer.png";
+		 time = setTimeout(dead, 10000);
+		 
+	} break;
+}
+switch (megaHP) {
+	case 3000 :{
+		 document.getElementById("over").style.width = "100%";
+	} break;
+	case 2900 :{
+		 document.getElementById("over").style.width = "97%";
+	} break;
+	case 2800 :{
+		 document.getElementById("over").style.width = "93%";
+	} break;
+	case 2700 :{
+		 document.getElementById("over").style.width = "90%";
+	} break;
+	case 2600 :{
+		 document.getElementById("over").style.width = "87%";
+	} break;
+	case 2500 :{
+		 document.getElementById("over").style.width = "83%";
+	} break;
+	case 2400 :{
+		 document.getElementById("over").style.width = "80%";
+	} break;
+	case 2300 :{
+		 document.getElementById("over").style.width = "77%";
+	} break;
+	case 2200 :{
+		 document.getElementById("over").style.width = "73%";
+	} break;
+	case 2100 :{
+		 document.getElementById("over").style.width = "70%";
+	} break;
+	case 2000 :{
+		 document.getElementById("over").style.width = "67%";
+	} break;
+	case 1900 :{
+		 document.getElementById("over").style.width = "63%";
+	} break;
+	case 1800 :{
+		 document.getElementById("over").style.width = "60%";
+	} break;
+	case 1700 :{
+		 document.getElementById("over").style.width = "57%";
+	} break;
+	case 1600 :{
+		 document.getElementById("over").style.width = "53%";
+	} break;
+	case 1500 :{
+		 document.getElementById("over").style.width = "50%";
+	} break;
+	case 1400 :{
+		 document.getElementById("over").style.width = "47%";
+	} break;
+	case 1300 :{
+		 document.getElementById("over").style.width = "43%";
+	} break;
+	case 1200 :{
+		 document.getElementById("over").style.width = "40%";
+	} break;
+	case 1100 :{
+		 document.getElementById("over").style.width = "37%";
+	} break;
+	case 1000 :{
+		 document.getElementById("over").style.width = "33%";
+	} break;
+	case 900 :{
+		 document.getElementById("over").style.width = "30%";
+	} break;
+	case 800 :{
+		 document.getElementById("over").style.width = "27%";
+	} break;
+	case 700 :{
+		 document.getElementById("over").style.width = "23%";
+	} break;
+	case 600 :{
+		 document.getElementById("over").style.width = "20%";
+	} break;
+	case 500 :{
+		 document.getElementById("over").style.width = "17%";
+	} break;
+	case 400 :{
+		 document.getElementById("over").style.width = "13%";
+	} break;
+	case 300 :{
+		 document.getElementById("over").style.width = "10%";
+	} break;
+	case 200 :{
+		 document.getElementById("over").style.width = "7%";
+	} break;
+	case 100 :{
+		 document.getElementById("over").style.width = "3%";
+	} break;
+	case 0 :{
+		 document.getElementById("over").style.width = "0%";
+		 Win();
+		 document.getElementById("attack").disabled = 'true';
+		 document.getElementById("die").disabled = 'true';
+	} break;
+}
+
+
+console.log(bossHP);
+console.log(megaHP);
+}
+
+function Die() {
+location.replace("file:///H:/Profile/Desktop/HTML%20YEAR%20END/dead.html");
+
+}
+
+function Win() {
+document.getElementById("boss").src = "homer-dead.png";
+document.getElementById("chat").innerHTML = "Oh no, you've won!"
+clearInterval(time);
+clearInterval(time2);
+setTimeout(Win2, 2000);
+}
+
+function Win2(){
+location.replace("file:///H:/Profile/Desktop/HTML%20YEAR%20END/yearendproject6.html")
+}
+
+function dead() {
+document.getElementById("chat").innerHTML = "I'm unleashing my final attack!";
+time2 = setTimeout(Die, 2000);
+}
+document.getElementById("attack").addEventListener("click",Attack);
+document.getElementById("die").addEventListener("click",Die);
+</script>
